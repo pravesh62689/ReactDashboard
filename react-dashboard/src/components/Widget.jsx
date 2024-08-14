@@ -6,7 +6,7 @@ import {
   ArcElement,
   BarElement,
   LineElement,
-  PointElement, // Registering PointElement for line charts
+  PointElement, 
   CategoryScale,
   LinearScale,
   Title,
@@ -15,12 +15,11 @@ import {
 } from 'chart.js';
 import { Doughnut, Pie, Bar, Line } from 'react-chartjs-2';
 
-// Register the necessary elements
 ChartJS.register(
   ArcElement,
   BarElement,
   LineElement,
-  PointElement, // Ensure PointElement is registered
+  PointElement, 
   CategoryScale,
   LinearScale,
   Title,

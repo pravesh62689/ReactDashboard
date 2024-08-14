@@ -4,15 +4,13 @@ import { addWidget } from '../features/widgetsSlice';
 
 const AddWidgetModal = ({ categoryId }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedWidgetId, setSelectedWidgetId] = useState(""); // Initialize with empty string
+  const [selectedWidgetId, setSelectedWidgetId] = useState("");
   const widgets = useSelector((state) => state.widgets.categories[categoryId].widgets);
   const dispatch = useDispatch();
-
-  // Find the selected widget object by ID
   const selectedWidget = widgets.find(widget => widget.id === selectedWidgetId) || {};
 
   const handleAddWidget = () => {
-    if (!selectedWidgetId) return; // Ensure a widget is selected
+    if (!selectedWidgetId) return; 
     const widget = {
       id: `widget-${widgets.length + 1}`,
       name: selectedWidget.name,
@@ -22,7 +20,7 @@ const AddWidgetModal = ({ categoryId }) => {
     };
     dispatch(addWidget({ categoryId, widget }));
     setIsOpen(false);
-    setSelectedWidgetId(""); // Reset selection after adding
+    setSelectedWidgetId(""); 
   };
 
   return (
